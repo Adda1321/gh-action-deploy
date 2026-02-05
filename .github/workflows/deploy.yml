@@ -23,7 +23,7 @@ jobs:
           SSH_HOST: ${{ secrets.SSH_HOST }}
         run: |
           ssh -i key.pem -o StrictHostKeyChecking=no root@$SSH_HOST << 'EOF'
-            cd /root/gh-actions-node
+            cd /root/gh-action-deploy
             git pull origin main
             docker compose down
             docker compose up --build -d
